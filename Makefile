@@ -42,7 +42,7 @@ package:
 	helm package charts/namespaces
 	mv namespaces*.tgz docs
 
-	helm repo index docs --url https://chart.onechart.dev
+	helm repo index docs --url https://laszlocph.github.io
 
 debug:
 	helm template charts/onechart/ -f values.yaml --debug
