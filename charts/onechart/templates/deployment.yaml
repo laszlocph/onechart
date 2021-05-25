@@ -30,7 +30,7 @@ spec:
         - name: {{ template "robustName" .Release.Name }}
           securityContext: &securityContext
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image }}:{{ .Values.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.pullPolicy }}
           {{- if .Values.command }}
           command:

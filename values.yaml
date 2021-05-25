@@ -1,3 +1,5 @@
+image: "nginx:1.20.0"
+
 ingress:
   host: chart-example.local
   annotations:

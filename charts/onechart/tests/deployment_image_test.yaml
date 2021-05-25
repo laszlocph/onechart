@@ -5,8 +5,7 @@ templates:
 tests:
   - it: Should set image and tag
     set:
-      image: nginx
-      tag: x.y.z
+      image: "nginx:x.y.z"
     asserts:
       - equal:
           path: spec.template.spec.containers[0].image
