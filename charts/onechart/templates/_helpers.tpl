@@ -70,3 +70,11 @@ Create robustName that can be used as Kubernetes resource name, and as subdomain
 {{- define "robustName" -}}
 {{ regexReplaceAll "[^0-9A-Za-z_\\.]+" . "-" | replace "_" "-" | lower | trunc 63 | trimSuffix "-" | trimPrefix "-" }}
 {{- end }}
+
+{{- define "helm-chart.robustName" -}}
+{{- if .Values.fullnameOverride }}
+{{- template "robustName" .Values.fullnameOverride }}
+{{- else }}
+{{- template "robustName" .Release.Name }}
+{{- end }}
+{{- end }}

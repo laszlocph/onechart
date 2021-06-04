@@ -11,3 +11,5 @@ ingresses:
   - host: another.local
     annotations:
       kubernetes.io/ingress.class: nginx
+
+fullnameOverride: fullname-override
